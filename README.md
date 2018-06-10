@@ -1,5 +1,6 @@
 # tensorflow-classification-network
 > 用TensorFlow实现各种分类网络（持续更新，现在主要是CNN）
+* 本项目只负责cnn分类问题，
 
 
 ### 用法
@@ -11,13 +12,27 @@
 
 
 ### data
-为了保证分类网络可以运行，上传了少量的数据，可以根据实际需要替换数据
+* 数据集选择 cifar10 
+    * 32 * 32 * 3
+    * 10类
+    * 5万张训练集+1万张测试数据
+* resisc45
+    * 卫星遥感数据
+    * 45类
+    * 256 * 256 * 3
+
 
 
 ### 分类网络
 包含的网络有：
 - 简单的5层CNN
-- AlexNet
+- AlexNet 
+    * cifar10上利用4层最高69
 - VGGNet
 - InceptionNet
 - ResNet
+
+
+
+### 参考文献
+
