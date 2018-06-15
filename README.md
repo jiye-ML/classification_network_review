@@ -2,13 +2,9 @@
 > 用TensorFlow实现各种分类网络（持续更新，现在主要是CNN）
 * 本项目只负责cnn分类问题，
 
+![](readme/cnn_架构.png)
 
-### 用法
-- 安装所需python环境
-- 只需要简单替换图中的部分，即可实现分类网络的切换
-!["use"](readme/use.png)
-比如换成残差网络：
-!["use2](readme/use2.png)
+
 
 
 ### data
@@ -25,14 +21,24 @@
 
 ### 分类网络
 包含的网络有：
-- 简单的5层CNN
-- AlexNet 
+* [简单的5层CNN](cnn_01.py)
+* [AlexNet](AlexNet.py) 
     * cifar10上利用4层最高69
-- VGGNet
-- InceptionNet
-- ResNet
+* [VGGNet](VggNet.py)
+* [InceptionNet](GoogLeNet.py)
+* [ResNet](ResNet.py) 
 
 
+### 代码结构
 
-### 参考文献
+* layer: 卷积， 池化， 等
+* Runner()： 训练和测试
+* Data: 数据
 
+
+### advance
+
+* 用slim实现的更高级封装框架
+    * Train:  训练网络
+    * Eval: 验证网络
+    * Prediction: 预测网络
