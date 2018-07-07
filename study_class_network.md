@@ -147,3 +147,7 @@
 * [ImageNet: VGGNet, ResNet, Inception, and Xception with Keras](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/)
 
 
+### 《Identity mappings in deep residual networks》
+* [paper](paper/2016-Identity%20Mappings%20in%20Deep%20Residual%20Networks.pdf)
+* [【一个神经元统治一切】ResNet 强大的理论证明](https://mp.weixin.qq.com/s/xTJr-jWMjk73TCZ8gBT4Ww)
+* [何恺明CVPR演讲：深入理解ResNet和视觉识别的表示学习（41 PPT）](https://mp.weixin.qq.com/s/Wmj0dkHA93RCWB10lUcgmw)
