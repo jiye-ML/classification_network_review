@@ -151,3 +151,7 @@
 * [paper](paper/2016-Identity%20Mappings%20in%20Deep%20Residual%20Networks.pdf)
 * [【一个神经元统治一切】ResNet 强大的理论证明](https://mp.weixin.qq.com/s/xTJr-jWMjk73TCZ8gBT4Ww)
 * [何恺明CVPR演讲：深入理解ResNet和视觉识别的表示学习（41 PPT）](https://mp.weixin.qq.com/s/Wmj0dkHA93RCWB10lUcgmw)
+
+
+
+* [如何评价 Squeeze-and-Excitation Networks ?](https://www.zhihu.com/question/65044831/answer/227262160)
