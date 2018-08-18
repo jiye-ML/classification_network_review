@@ -32,7 +32,7 @@ class ResNet:
             # 定义直连的x：将两者的通道数和空间尺寸处理成一致
             depth_in = inputs.get_shape()[-1].value
             if depth == depth_in:
-                # 输入和输出通道数相同的情况
+                # 输入和输出通道数相同的情况, 那么查看特征值图大小是否一致，即下面的if else.
                 shortcut = inputs if stride == 1 else slim.max_pool2d(inputs, kernel_size=[1, 1], stride=stride,
                                                                       padding="SAME")
             else:
