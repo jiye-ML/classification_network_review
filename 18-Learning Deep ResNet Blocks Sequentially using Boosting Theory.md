@@ -14,7 +14,7 @@
 
 * **hypothesis module**:  
 
-  $$o_{t}(x)=softmax(W_{t}^{T}\cdot g_{t}(x))\epsilon R^{C}$$, 其中 CC 为分类任务的类别数。 即这是一个线性分类器（Logistic Regression）
+  $$o_{t}(x)=softmax(W_{t}^{T}\cdot g_{t}(x))\epsilon R^{C}$$, 其中 C 为分类任务的类别数。 即这是一个线性分类器（Logistic Regression）
 
 * **weak module classifier**: 
 
