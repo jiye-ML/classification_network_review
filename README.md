@@ -21,12 +21,12 @@
 
 ### 分类网络
 包含的网络有：
-* [简单的5层CNN](cnn_01.py)
-* [AlexNet](AlexNet.py) 
+* [简单的5层CNN](src/cnn_01.py)
+* [AlexNet](src/AlexNet.py) 
     * cifar10上利用4层最高69
-* [VGGNet](VggNet.py)
-* [InceptionNet](GoogLeNet.py)
-* [ResNet](ResNet.py) 
+* [VGGNet](src/VggNet.py)
+* [InceptionNet](src/GoogLeNet.py)
+* [ResNet](src/ResNet.py) 
 
 
 ### 代码结构
