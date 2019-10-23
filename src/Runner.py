@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 from src.Tools import Tools
-from src.Data import Cifar10Data
+from src.Data import Cifar10Data, PreData, Data
 from src.VggNet import VGGNet
 
 
@@ -100,7 +100,7 @@ if __name__ == '__main__':
     parser.add_argument("-learning_rate", type=float, default=0.0001, help="learning_rate")
     parser.add_argument("-decay_steps", type=int, default=1000, help="decay_steps")
     parser.add_argument("-skip_layers", type=str, default=['conv5', 'fc6', 'fc7', 'fc8'], help="finetune skip these layers")
-    parser.add_argument("-zip_file", type=str, default="data/resisc45.zip", help="zip file path")
+    parser.add_argument("-zip_file", type=str, default="../data/resisc45.zip", help="zip file path")
     args = parser.parse_args()
 
     output_param = "name={},epochs={},batch_size={},type_number={},image_size={},image_channel={},zip_file={},keep_prob={}"

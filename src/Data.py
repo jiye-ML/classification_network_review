@@ -125,7 +125,7 @@ class Data:
 class Cifar10Data:
 
     def __init__(self, batch_size=64, type_number=10, image_size=32,
-                 image_channel=3, data_path = "data/cifar-10-batches-py"):
+                 image_channel=3, data_path = "../data/cifar-10-batches-py"):
         '''
         
         :param batch_size: 
