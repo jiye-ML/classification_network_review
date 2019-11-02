@@ -1,3 +1,8 @@
+import collections
+import tensorflow as tf
+import tensorflow.contrib.slim as slim
+
+
 class ResNet:
 
     def __init__(self, type_number, image_size, image_channel, batch_size):

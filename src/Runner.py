@@ -1,10 +1,12 @@
 import argparse
 import numpy as np
 import tensorflow as tf
+import os
 
 from src.Tools import Tools
 from src.Data import Cifar10Data, PreData, Data
 from src.VggNet import VGGNet
+
 
 
 class Runner:
@@ -92,14 +94,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-name", type=str, default="VggNet", help="name")
     parser.add_argument("-epochs", type=int, default=50000000, help="train epoch number")
-    parser.add_argument("-batch_size", type=int, default=256, help="batch size")
+    parser.add_argument("-batch_size", type=int, default=128, help="batch size")
     parser.add_argument("-type_number", type=int, default=10, help="type number")
     parser.add_argument("-image_size", type=int, default=32, help="image size")
     parser.add_argument("-image_channel", type=int, default=3, help="image channel")
-    parser.add_argument("-keep_prob", type=float, default=0.7, help="keep prob")
-    parser.add_argument("-learning_rate", type=float, default=0.0001, help="learning_rate")
+    parser.add_argument("-keep_prob", type=float, default=0.5, help="keep prob")
+    parser.add_argument("-learning_rate", type=float, default=0.001, help="learning_rate")
     parser.add_argument("-decay_steps", type=int, default=1000, help="decay_steps")
-    parser.add_argument("-skip_layers", type=str, default=['conv5', 'fc6', 'fc7', 'fc8'], help="finetune skip these layers")
+    parser.add_argument("-skip_layers", type=str, default=[], help="finetune skip these layers")
     parser.add_argument("-zip_file", type=str, default="../data/resisc45.zip", help="zip file path")
     args = parser.parse_args()
 
@@ -118,6 +120,7 @@ if __name__ == '__main__':
 
     runner = Runner(data=now_data, classifies=now_net, learning_rate=args.learning_rate, decay_steps=args.decay_steps)
     runner.train(epochs=args.epochs, save_model=Tools.new_dir("model/") + args.name + args.name + ".ckpt",
-                 min_loss=1e-10, print_loss=20, test=1000, save=10000, keep_prob=args.keep_prob)
+                 min_loss=1e-10, print_loss=100, test=1000, save=1000, keep_prob=args.keep_prob)
+
 
     pass

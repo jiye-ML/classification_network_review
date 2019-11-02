@@ -57,8 +57,6 @@ class VGGNet:
         fc_7_drop = layers.dropout(layers.fc(fc_6_drop, 1024, name='fc_7'), keep_prob=kw["keep_prob"])
         fc_8 = layers.fc(fc_7_drop, self._type_number, name='fc_8', relu=False)
 
-        print("64 4 512")
-
         softmax = tf.nn.softmax(fc_8)
         prediction = tf.argmax(softmax, 1)
 

@@ -3,7 +3,8 @@ import tensorflow.contrib.layers as tcl
 
 
 
-def conv(x, filter_height, filter_width, num_filters, stride_y, stride_x, name, padding='SAME', groups=1, relu=True):
+def conv(x, filter_height, filter_width, num_filters, stride_y, stride_x, name,
+         padding='SAME', groups=1, relu=True, is_batch_norm = True):
     """Create a convolution layer.
 
     Adapted from: https://github.com/ethereon/caffe-tensorflow
@@ -35,6 +36,9 @@ def conv(x, filter_height, filter_width, num_filters, stride_y, stride_x, name, 
     if relu:
         bias = tf.nn.relu(bias, name=scope.name)
 
+    # if is_batch_norm:
+    #     bias = batch_norm(bias)
+
     return bias
 
 # 全连接层
@@ -58,3 +62,9 @@ def lrn(x, name,radius=5, alpha=1e-4, beta=0.75, bias=2.0):
 
 def dropout(x, keep_prob):
     return tf.nn.dropout(x, keep_prob)
+
+# 实现Batch Normalization
+def batch_norm(x, epsilon=1e-5, momentum=0.9,train=True, name="batch_norm"):
+    with tf.variable_scope(name, reuse=tf.AUTO_REUSE):
+        return tf.contrib.layers.batch_norm(x, decay=momentum, updates_collections=None, epsilon=epsilon,
+                                        scale=True, is_training=train,scope=name)
