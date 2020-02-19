@@ -5,8 +5,6 @@
 ![](readme/cnn_架构.png)
 
 
-
-
 ### data
 * 数据集选择 cifar10 
     * 32 * 32 * 3
@@ -16,17 +14,6 @@
     * 卫星遥感数据
     * 45类
     * 256 * 256 * 3
-
-
-
-### 分类网络
-包含的网络有：
-* [简单的5层CNN](src/cnn_01.py)
-* [AlexNet](src/AlexNet.py) 
-    * cifar10上利用4层最高69
-* [VGGNet](src/VggNet.py)
-* [InceptionNet](src/GoogLeNet.py)
-* [ResNet](src/ResNet.py) 
 
 
 ### 代码结构
@@ -42,3 +29,7 @@
     * Train:  训练网络
     * Eval: 验证网络
     * Prediction: 预测网络
+    
+    
+
+![目录](index.png)
