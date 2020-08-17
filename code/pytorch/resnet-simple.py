@@ -25,12 +25,13 @@ model_urls = {
 
 
 def conv3x3(in_planes, out_planes, stride=1, padding=1):
-  return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=padding, bias=False)  # ? Why no bias
+  # ? Why no bias : 后面接了 BN 层， 会重新设置 bias
+  return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=padding, bias=False)
 
 
 def conv1x1(in_planes, out_planes, stride=1):
-  return nn.Conv2d(in_planes, out_planes, kernel_size=1, stride=stride,
-                   bias=False)  # ? Why no bias: 如果卷积层之后是BN层，那么可以不用偏置参数，可以节省内存
+  # ? Why no bias: 如果卷积层之后是BN层，那么可以不用偏置参数，可以节省内存
+  return nn.Conv2d(in_planes, out_planes, kernel_size=1, stride=stride, bias=False)
 
 
 class BasicBlock(nn.Module):
@@ -193,8 +194,7 @@ def resnet18(pretrained=False, progress=True, **kwargs):
       pretrained (bool): If True, returns a model pre-trained on ImageNet
       progress (bool): If True, displays a progress bar of the download to stderr
   """
-  return _resnet('resnet18', BasicBlock, [2, 2, 2, 2], pretrained, progress,
-                 **kwargs)
+  return _resnet('resnet18', BasicBlock, [2, 2, 2, 2], pretrained, progress, **kwargs)
 
 
 def resnet50(pretrained=False, progress=True, **kwargs):
@@ -204,8 +204,7 @@ def resnet50(pretrained=False, progress=True, **kwargs):
       pretrained (bool): If True, returns a model pre-trained on ImageNet
       progress (bool): If True, displays a progress bar of the download to stderr
   """
-  return _resnet('resnet50', Bottleneck, [3, 4, 6, 3], pretrained, progress,
-                 **kwargs)
+  return _resnet('resnet50', Bottleneck, [3, 4, 6, 3], pretrained, progress, **kwargs)
 
 
 model = resnet18(pretrained=True)
